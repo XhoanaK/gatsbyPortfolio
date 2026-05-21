@@ -1,14 +1,14 @@
 module.exports = {
   //-- SITE SETTINGS -----
   author: "@xhoanak",
-  siteTitle: "My Portfolio",
-  siteShortTitle: "xk", // Used as logo text in header, footer, and splash screen
+  siteTitle: "Xhoana Koca",
+  siteShortTitle: "XK",
   siteDescription:
-    "A modern one-page portfolio with a clean yet expressive design.",
-  siteUrl: "https://gatsby-starter-portfolio-minimal.netlify.app/",
+    "Business Analyst & QA Analyst with 4+ years of experience in enterprise software delivery, testing, and cross-functional project coordination.",
+  siteUrl: "https://xhoanakoca.netlify.app/",
   siteLanguage: "en_US",
   siteIcon: "content/favicon.png", // Relative to gatsby-config file
-  seoTitleSuffix: "Portfolio Minimal", // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
+  seoTitleSuffix: "Xhoana Koca",
   useCookieBar: false, // If you use Google Analytics and want to be GDPR-compliant, set it to true
   googleAnalyticsTrackingId: "", // e.g. UA-XXXXXX-X
 
@@ -16,8 +16,8 @@ module.exports = {
   colors: {
     lightTheme: {
       primary: "#000000",
-      secondary: "#FFF4D9",
-      tertiary: "#F2F2F2",
+      secondary: "#E8F0FE",
+      tertiary: "#F5F5F5",
       text: "#000000",
       subtext: "#555555",
       background: "#FFFFFF",
@@ -28,8 +28,8 @@ module.exports = {
     },
     darkTheme: {
       primary: "#FAFAFA",
-      secondary: "#2A2926",
-      tertiary: "#252525",
+      secondary: "#1A2440",
+      tertiary: "#1E1E2E",
       text: "rgba(255, 255, 255, 0.87)",
       subtext: "#AAAAAA",
       background: "#121212",

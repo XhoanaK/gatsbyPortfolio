@@ -3,11 +3,8 @@
   publish = "public"
 
 [build.environment]
-  CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
+  NODE_VERSION = "14"
   TERM = "xterm"
 
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
-
-[[plugins]]
-  package = "netlify-plugin-cypress"
