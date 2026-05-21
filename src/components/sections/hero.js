@@ -28,7 +28,29 @@ const StyledContentWrapper = styled(ContentWrapper)`
     justify-content: center;
     margin-bottom: 6rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 4rem;
+    }
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-image {
+      width: 100%;
+      max-width: 14rem;
+      margin-top: 2.5rem;
+      @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+        margin-top: 0;
+        margin-left: 3rem;
+        flex-shrink: 0;
+      }
+    }
+    .hero-photo {
+      border-radius: 1rem;
+      box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     }
     .greetings {
       display: flex;
@@ -106,39 +128,53 @@ const Hero = ({ content }) => {
     <StyledSection id="hero">
       {!isIntroDone && <SplashScreen />}
       <StyledContentWrapper>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={gControls}
-          data-testid="animated-heading"
-        >
-          <h1 className="title">
-            <div className="greetings">
-              {frontmatter.greetings}
-              <motion.div
-                animate={eControls}
-                style={{ originX: 0.7, originY: 0.7 }}
-              >
-                <Img
-                  className="emoji"
-                  fluid={frontmatter.icon.childImageSharp.fluid}
-                />
-              </motion.div>
+        <div className="hero-text">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={gControls}
+            data-testid="animated-heading"
+          >
+            <h1 className="title">
+              <div className="greetings">
+                {frontmatter.greetings}
+                <motion.div
+                  animate={eControls}
+                  style={{ originX: 0.7, originY: 0.7 }}
+                >
+                  <Img
+                    className="emoji"
+                    fluid={frontmatter.icon.childImageSharp.fluid}
+                  />
+                </motion.div>
+              </div>
+              {frontmatter.title}
+            </h1>
+            <h2 className="subtitle">
+              {frontmatter.subtitlePrefix}{" "}
+              <AnimatedUnderlining animate={uControls} big>
+                {frontmatter.subtitle}
+              </AnimatedUnderlining>
+            </h2>
+            <div className="description">
+              <MDXRenderer>{body}</MDXRenderer>
             </div>
-            {frontmatter.title}
-          </h1>
-          <h2 className="subtitle">
-            {frontmatter.subtitlePrefix}{" "}
-            <AnimatedUnderlining animate={uControls} big>
-              {frontmatter.subtitle}
-            </AnimatedUnderlining>
-          </h2>
-          <div className="description">
-            <MDXRenderer>{body}</MDXRenderer>
-          </div>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={sControls}>
-          <Social fontSize=".95rem" padding=".3rem 1.25rem" width="auto" />
-        </motion.div>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, x: 20 }} animate={sControls}>
+            <Social fontSize=".95rem" padding=".3rem 1.25rem" width="auto" />
+          </motion.div>
+        </div>
+        {frontmatter.image && (
+          <motion.div
+            className="hero-image"
+            initial={{ opacity: 0, x: 20 }}
+            animate={gControls}
+          >
+            <Img
+              className="hero-photo"
+              fluid={frontmatter.image.childImageSharp.fluid}
+            />
+          </motion.div>
+        )}
       </StyledContentWrapper>
     </StyledSection>
   )
