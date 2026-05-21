@@ -37,15 +37,16 @@ const StyledContentWrapper = styled(ContentWrapper)`
       display: flex;
       flex-direction: column;
       justify-content: center;
+      flex: 1;
     }
     .hero-image {
       width: 100%;
-      max-width: 14rem;
+      max-width: 18rem;
+      flex-shrink: 0;
       margin-top: 2.5rem;
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
         margin-top: 0;
         margin-left: 3rem;
-        flex-shrink: 0;
       }
     }
     .hero-photo {
