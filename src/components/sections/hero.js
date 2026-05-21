@@ -150,10 +150,7 @@ const Hero = ({ content }) => {
               {frontmatter.title}
             </h1>
             <h2 className="subtitle">
-              {frontmatter.subtitlePrefix}{" "}
-              <AnimatedUnderlining animate={uControls} big>
-                {frontmatter.subtitle}
-              </AnimatedUnderlining>
+              {frontmatter.subtitlePrefix}{frontmatter.subtitle}
             </h2>
             <div className="description">
               <MDXRenderer>{body}</MDXRenderer>
