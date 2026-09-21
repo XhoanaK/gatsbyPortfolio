@@ -170,6 +170,13 @@ const Hero = ({ content }) => {
               <span className="g2"><span className="kw">Then</span> UAT, SIT, and regression cycles are planned and executed</span>
               <span className="g2"><span className="kw">And</span> defects are documented with root cause analysis</span>
               <span className="g2"><span className="kw">And</span> releases go out on time</span>
+              <div className="g-gap" />
+              <span className="g1"><span className="kw">Scenario:</span> Business Analyst who speaks both languages</span>
+              <span className="g2"><span className="kw">Given</span> stakeholders with business needs</span>
+              <span className="g2"><span className="kw">And</span> developers who need technical requirements</span>
+              <span className="g2"><span className="kw">When</span> Xhoana bridges the two</span>
+              <span className="g2"><span className="kw">Then</span> requirements become user stories with clear acceptance criteria</span>
+              <span className="g2"><span className="kw">And</span> nothing gets lost in translation</span>
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 20 }} animate={sControls}>
