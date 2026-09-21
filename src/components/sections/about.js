@@ -9,11 +9,11 @@ import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
 
 const EXPERIENCE = [
-  { company: "Citi Group", role: "BA / QA Analyst", period: "2021 – 2025" },
-  { company: "RFCUNY – NYCCT", role: "Student Advisor", period: "2020 – 2021" },
-  { company: "Virufy", role: "Web Dev Team Lead", period: "2020 – 2021" },
-  { company: "Aavia", role: "Software Dev Intern", period: "2020" },
-  { company: "NYCCT, CUNY", role: "B.Tech · Magna Cum Laude", period: "2020" },
+  { company: "Citi Group", role: "BA / QA Analyst", period: "Aug 2021 – Dec 2025" },
+  { company: "RFCUNY – NYCCT", role: "Student Advisor", period: "Feb 2020 – Jun 2021" },
+  { company: "Virufy", role: "Web Dev Team Lead", period: "Aug 2020 – Mar 2021" },
+  { company: "Aavia", role: "Software Dev Intern", period: "Jan – Mar 2020" },
+  { company: "NYCCT, CUNY", role: "B.Tech · Magna Cum Laude", period: "May 2020" },
 ]
 
 const StyledSection = styled.section`
