@@ -75,6 +75,13 @@ const StyledContentWrapper = styled(ContentWrapper)`
     .subtitle {
       margin-top: -0.75rem;
     }
+    .location {
+      font-size: 0.825rem;
+      color: ${({ theme }) => theme.colors.subtext};
+      margin-top: 0.75rem;
+      margin-bottom: 0;
+      letter-spacing: 0.01em;
+    }
     .gherkin-hero {
       font-family: "Courier New", Courier, monospace;
       font-size: 0.78rem;
@@ -151,6 +158,9 @@ const Hero = ({ content }) => {
             <h2 className="subtitle">
               {frontmatter.subtitlePrefix}{frontmatter.subtitle}
             </h2>
+            <p className="location">
+              West Hartford, CT &nbsp;&middot;&nbsp; US Citizen &nbsp;&middot;&nbsp; Seeking remote opportunities
+            </p>
             <div className="gherkin-hero">
               <span><span className="kw">Feature:</span> Hire Xhoana Koca</span>
               <div className="g-gap" />
