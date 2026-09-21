@@ -8,7 +8,6 @@ import SEO from "../components/seo"
 import Hero from "../components/sections/hero"
 import Articles from "../components/sections/articles"
 import About from "../components/sections/about"
-import Gherkin from "../components/sections/gherkin"
 import Interests from "../components/sections/interests"
 import Projects from "../components/sections/projects"
 import Testimonial from "../components/sections/testimonial"
@@ -41,7 +40,6 @@ const IndexPage = ({ data }) => {
         {/* Articles is populated via Medium RSS Feed fetch */}
         {/* <Articles /> */}
         <About content={data.about.edges} />
-        <Gherkin />
         <Interests content={data.interests.edges} />
         <Projects content={data.projects.edges} />
         <Testimonial />

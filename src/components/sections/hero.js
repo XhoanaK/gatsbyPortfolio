@@ -2,12 +2,10 @@ import React, { useEffect, useContext } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import { motion, useAnimation } from "framer-motion"
 
 import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
-import Underlining from "../../styles/underlining"
 import Social from "../social"
 import SplashScreen from "../splashScreen"
 import { lightTheme, darkTheme } from "../../styles/theme"
@@ -77,26 +75,33 @@ const StyledContentWrapper = styled(ContentWrapper)`
     .subtitle {
       margin-top: -0.75rem;
     }
-    .description {
-      font-size: 1.125rem;
+    .gherkin-hero {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.78rem;
+      line-height: 1.9;
+      background: ${({ theme }) => theme.colors.tertiary};
+      border-left: 3px solid ${({ theme }) => theme.colors.primary};
+      border-radius: 0.25rem;
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.25rem;
       margin-bottom: 2rem;
+      overflow-x: auto;
     }
+    .kw { font-weight: 700; }
+    .g1 { padding-left: 1rem; display: block; }
+    .g2 { padding-left: 2rem; display: block; }
+    .g-gap { height: 0.4rem; }
   }
 `
 
-const AnimatedUnderlining = motion.custom(Underlining)
-
 const Hero = ({ content }) => {
-  const { frontmatter, body } = content[0].node
+  const { frontmatter } = content[0].node
   const { isIntroDone, darkMode } = useContext(Context).state
 
-  // Controls to orchestrate animations of greetings, emoji, social profiles, underlining
   const gControls = useAnimation()
   const eControls = useAnimation()
   const sControls = useAnimation()
-  const uControls = useAnimation()
 
-  // Start Animations after the splashScreen sequence is done
   useEffect(() => {
     const pageLoadSequence = async () => {
       if (isIntroDone) {
@@ -113,17 +118,10 @@ const Hero = ({ content }) => {
           opacity: 1,
           x: 0,
         })
-        // Animate underlining to hover state
-        await uControls.start({
-          boxShadow: `inset 0 -2rem 0 ${
-            darkMode ? darkTheme.colors.secondary : lightTheme.colors.secondary
-          }`,
-          transition: { delay: 0.4, ease: "circOut" },
-        })
       }
     }
     pageLoadSequence()
-  }, [isIntroDone, darkMode, eControls, gControls, sControls, uControls])
+  }, [isIntroDone, darkMode, eControls, gControls, sControls])
 
   return (
     <StyledSection id="hero">
@@ -153,8 +151,15 @@ const Hero = ({ content }) => {
             <h2 className="subtitle">
               {frontmatter.subtitlePrefix}{frontmatter.subtitle}
             </h2>
-            <div className="description">
-              <MDXRenderer>{body}</MDXRenderer>
+            <div className="gherkin-hero">
+              <span><span className="kw">Feature:</span> Hire Xhoana Koca</span>
+              <div className="g-gap" />
+              <span className="g1"><span className="kw">Scenario:</span> QA Analyst who ships quality software</span>
+              <span className="g2"><span className="kw">Given</span> a team needing clear requirements and test coverage</span>
+              <span className="g2"><span className="kw">When</span> Xhoana joins as Business Analyst &amp; QA Analyst</span>
+              <span className="g2"><span className="kw">Then</span> UAT, SIT, and regression cycles are planned and executed</span>
+              <span className="g2"><span className="kw">And</span> defects are documented with root cause analysis</span>
+              <span className="g2"><span className="kw">And</span> releases go out on time</span>
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 20 }} animate={sControls}>
@@ -182,7 +187,6 @@ Hero.propTypes = {
   content: PropTypes.arrayOf(
     PropTypes.shape({
       node: PropTypes.shape({
-        body: PropTypes.string.isRequired,
         frontmatter: PropTypes.object.isRequired,
       }).isRequired,
     }).isRequired
