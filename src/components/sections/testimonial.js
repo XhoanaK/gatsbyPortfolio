@@ -108,7 +108,7 @@ const Testimonial = () => {
             </div>
             <a
               className="letter-link"
-              href="/citi-recommendation.pdf"
+              href="/citi-recommendation.html"
               target="_blank"
               rel="noopener noreferrer"
             >
