@@ -24,7 +24,14 @@ const StyledContentWrapper = styled(ContentWrapper)`
       background: ${({ theme }) => theme.colors.tertiary};
       border-radius: 0.5rem;
       padding: 2rem 2.5rem;
-      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial-card.secondary {
+      background: transparent;
+      border: 1px solid ${({ theme }) => theme.colors.tertiary};
+      .quote-text {
+        font-size: 0.95rem;
+      }
     }
     .quote-mark {
       font-size: 4rem;
@@ -84,8 +91,32 @@ const Testimonial = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={tControls}
         >
-          <h3 className="section-title">Recommendation</h3>
+          <h3 className="section-title">Recommendations</h3>
+
           <div className="testimonial-card">
+            <span className="quote-mark">"</span>
+            <p className="quote-text">
+              I can say without reservation that she is one of the strongest
+              analysts and team players I have worked with. Her creativity in
+              finding straightforward solutions to genuinely complex problems
+              made her someone the team could always count on. Her communication
+              is consistently clear, thoughtful, and impactful.
+            </p>
+            <div className="attribution">
+              Raghuveer Gaddam{" "}
+              <span>— VP, Compliance &amp; Legal Technology at Citi</span>
+            </div>
+            <a
+              className="letter-link"
+              href="/citi-recommendation.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View full letter →
+            </a>
+          </div>
+
+          <div className="testimonial-card secondary">
             <span className="quote-mark">"</span>
             <p className="quote-text">
               She brings technical skills, adaptability, initiative, leadership
