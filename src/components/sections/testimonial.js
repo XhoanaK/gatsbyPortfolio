@@ -88,7 +88,7 @@ const Testimonial = () => {
       <StyledContentWrapper>
         <motion.div
           ref={tRef}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={tControls}
         >
           <h3 className="section-title">Recommendations</h3>
@@ -108,7 +108,7 @@ const Testimonial = () => {
             </div>
             <a
               className="letter-link"
-              href="/citi-recommendation.html"
+              href="/citi-recommendation.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >

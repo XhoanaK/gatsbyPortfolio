@@ -70,7 +70,7 @@ const Deck = () => {
       <StyledContentWrapper>
         <motion.div
           ref={tRef}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={tControls}
         >
           <h3 className="section-title">Portfolio Deck</h3>

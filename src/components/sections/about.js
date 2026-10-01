@@ -135,7 +135,7 @@ const About = ({ content }) => {
         <motion.div
           className="inner-wrapper"
           ref={tRef}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={tControls}
         >
           <h3 className="section-title">{frontmatter.title}</h3>
@@ -146,7 +146,7 @@ const About = ({ content }) => {
         <motion.div
           className="timeline-wrapper"
           ref={iRef}
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 1, x: 0 }}
           animate={iControls}
         >
           <div className="timeline-heading">Experience</div>
